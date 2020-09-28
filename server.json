@@ -1,10 +1,4 @@
 {
-	"variables": {
-		"client_id": "8ecae291-76ab-48a8-b6a7-d2ce729750b4",
-		"client_secret": "pkeB-_-YWpPb58m82Z_-EJxWvb5zvo~zMi",
-		"subscription_id": "fc0024ba-9981-4213-a9a3-8dbd0c7e8b48",
-		"environment_tag": "Demo"		
-	},
 	"builders": [{
 		"client_id": "{{user `client_id`}}",
 		"client_secret": "{{user `client_secret`}}",
