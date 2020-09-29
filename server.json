@@ -16,7 +16,7 @@
 				"environment": "{{user `environment_tag`}}"
 		},
 		"location": "East US",
-		"vm_size": "Standard_D2s_v3",
+		"vm_size": "Standard_B1ms",
 		"type": "azure-arm"
 	}],
 	"provisioners": [{

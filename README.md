@@ -1,24 +1,65 @@
 # Azure Infrastructure Operations Project: Deploying a scalable IaaS web server in Azure
 
 ### Introduction
-For this project, you will write a Packer template and a Terraform template to deploy a customizable, scalable web server in Azure.
+A simple Terraform/Packer Template that creates any number of Linux VM on an Azure Subcription via a predeployed packer image.
 
 ### Getting Started
+
+Before you can use this templates successful, you need an Azure subscription and an access to the resources within the platform.
+You also need to be comfortable working in a command prompt.
+
 1. Clone this repository
-
-2. Create your infrastructure as code
-
-3. Update this README to reflect how someone would use your code.
+2. Edit the template files 
+3. Execute the commands as detailed in the instruction section.
 
 ### Dependencies
-1. Create an [Azure Account](https://portal.azure.com) 
-2. Install the [Azure command line interface](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
-3. Install [Packer](https://www.packer.io/downloads)
-4. Install [Terraform](https://www.terraform.io/downloads.html)
+1. Install the [Azure command line interface](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
+2. Install [Packer](https://www.packer.io/downloads)
+3. Install [Terraform](https://www.terraform.io/downloads.html)
 
 ### Instructions
-**Your words here**
+There 2 parts to the templates in these repository.
+
+**Packer**
+The Packer template files creates an image on your azure subscription using a preconfigured resource group.
+
+Edit **variables.json**  template accordingly with the corresponding information which will enable packer to create an image on your azure subscription.
+
+To create the image, run the following command:
+
+1.  packer build -var-file variables.json server.json
+
+
+
+**Terraform**
+After you have cloned or downloaded this file, the **variables.tf** file contains 6 variables you need to supply.
+
+You can add a default parameter to the file so you do not have to enter this all the time. 
+
+	For example the **"location"** variable:
+	
+		variable "location" {
+		description = "The Azure Region in which all resources should be created."
+		**default = "East US"**
+		}
+
+To start the deployment, perform the following steps in a command prompt:
+
+1. Run az login
+2. Run terraform init
+3. Run terraform plan
+4. Confirm that the changes in the output are your desired/expected changes
+5. Run terraform apply
 
 ### Output
-**Your words here**
+A successful deployment will create the following resource in your subcription:
+
+1. A resource group for the deployment
+2. A load balancer
+3. Any number of specified NIC
+4. Any number of specified VM
+5. An availability set
+6. A virtual Network
+7. A Network Security Group
+8. A Public IP address
 
