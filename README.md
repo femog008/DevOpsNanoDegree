@@ -5,8 +5,8 @@ A simple Terraform/Packer Template that creates any number of Linux VM on an Azu
 
 ### Getting Started
 
-Before you can use this templates successful, you need an Azure subscription and an access to the resources within the platform.
-You also need to be comfortable working in a command prompt.
+Before you can use this templates successful, you need an Azure subscription and access to the resources within the platform.
+You also need to be comfortable working in command prompt or shell.
 
 1. Clone this repository
 2. Edit the template files 
@@ -20,7 +20,7 @@ You also need to be comfortable working in a command prompt.
 ### Instructions
 There 2 parts to the templates in these repository.
 
-**Packer**
+**1. Packer:**
 The Packer template files creates an image on your azure subscription using a preconfigured resource group.
 
 Edit **variables.json**  template accordingly with the corresponding information which will enable packer to create an image on your azure subscription.
@@ -31,7 +31,7 @@ To create the image, run the following command:
 
 
 
-**Terraform**
+**2. Terraform:**
 After you have cloned or downloaded this file, the **variables.tf** file contains 6 variables you need to supply.
 
 You can add a default parameter to the file so you do not have to enter this all the time. 
